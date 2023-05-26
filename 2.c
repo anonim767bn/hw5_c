@@ -6,9 +6,9 @@ struct Person
 };
 
 float averageAge (struct Person array[], int n){
-    int summ = 0;
+    float summ = 0;
     for (int i = 0; i < n; i++){
-    summ+=*(array+i)->age;
+    summ+=array[i].age;
     }
     return summ/n;
 }
