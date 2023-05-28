@@ -20,4 +20,19 @@ int main() {
     int arr[a][b];
     scan2dArray(a, b, arr);
     print2dArray(a, b, arr);
+    int summ = 0;
+    int maxSumm = 0, minSumm=0, indexMin = 0, indexMax = 0;
+    for(int col = 0; col<b; col++){
+        for(int row = 0; row < a; row++){
+            summ+=arr[row][col];
+        }
+        maxSumm = summ > maxSumm ? summ : maxSumm;
+        indexMax = summ > maxSumm ? col : indexMax;
+        minSumm = summ < minSumm ? summ : minSumm;
+        indexMin = summ < minSumm ? col : indexMin;
+        summ=0;
+
+
+    }
+    printf("%d %d\n", indexMax, indexMin);
 }
